@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <title>Kamyar Tamizkar – CV</title>
   <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #333;
+      --accent: #007acc;
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --accent: #66ccff;
+    }
     body {
       font-family: 'Segoe UI', sans-serif;
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      color: #333;
     }
     h1, h2 {
       border-bottom: 1px solid #ccc;
@@ -23,7 +34,8 @@
     }
     h2 {
       font-size: 20px;
-      color: #444;
+      color: var(--accent);
+      cursor: pointer;
     }
     p, li {
       font-size: 16px;
@@ -31,26 +43,49 @@
     ul {
       margin-left: 20px;
     }
+    .section-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .visible {
+      display: block;
+    }
+    .toggle-btn {
+      margin: 20px 0;
+      cursor: pointer;
+      padding: 8px 12px;
+      background: var(--accent);
+      border: none;
+      color: white;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
 
-<h1>Kamyar Tamizkar</h1>
+<button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<h1>📈 Kamyar Tamizkar</h1>
 <p><strong>Geophysicist | Seismic Interpretation | Fault Mechanics</strong></p>
 <p>📍 Padova, Italy | 📧 kamyartamizkar@gmail.com | 📞 +39 371 536 3288</p>
 <p><a href="https://www.linkedin.com/in/kamyar-tamizkar-654b8620a" target="_blank">LinkedIn Profile</a></p>
 
-<h2>About Me</h2>
+<h2 onclick="toggleSection(this)">🔍 About Me</h2>
+<div class="section-content visible">
 <p>
 I am a research-driven geophysicist with a strong background in seismic interpretation, fault mechanics, and high-pressure experimental geophysics. My academic work focuses on understanding seismic processes in carbonate fault systems and contributing to more accurate earthquake modeling and hazard mitigation. I am passionate about bridging scientific research with societal impact, particularly in enhancing the safety of CO₂ geological storage and reducing earthquake-related risks.
 </p>
+</div>
 
-<h2>Research Interests</h2>
+<h2 onclick="toggleSection(this)">📊 Research Interests</h2>
+<div class="section-content">
 <p>
 Seismology, fault mechanics, seismic attenuation (Q), microseismicity, high-pressure rock deformation, waveform analysis, seismic filtering, full waveform inversion, subsurface fluid-rock interaction.
 </p>
+</div>
 
-<h2>Education</h2>
+<h2 onclick="toggleSection(this)">🎓 Education</h2>
+<div class="section-content">
 <ul>
   <li><strong>MSc in Geophysics for Natural Risk and Resources</strong> – University of Padua, Italy (2022–2024)<br>
     Final Grade: 110/110 cum laude<br>
@@ -75,8 +110,10 @@ Seismology, fault mechanics, seismic attenuation (Q), microseismicity, high-pres
     Final Grade: 14.19/20
   </li>
 </ul>
+</div>
 
-<h2>Work & Research Experience</h2>
+<h2 onclick="toggleSection(this)">💼 Work & Research Experience</h2>
+<div class="section-content">
 <ul>
   <li><strong>HPHT Lab Assistant (Internship)</strong> – INGV, Rome (May 2024)<br>
     <ul>
@@ -102,23 +139,29 @@ Seismology, fault mechanics, seismic attenuation (Q), microseismicity, high-pres
     </ul>
   </li>
 </ul>
+</div>
 
-<h2>Technical Skills</h2>
+<h2 onclick="toggleSection(this)">🛠️ Technical Skills</h2>
+<div class="section-content">
 <ul>
   <li><strong>Software:</strong> Petrel, Geolog, AutoCAD, PetroMOD, QGIS</li>
   <li><strong>Programming:</strong> Python (NumPy, ObsPy, Pandas, Matplotlib); MATLAB (signal processing)</li>
   <li><strong>Geophysics:</strong> Seismic interpretation (2D & 3D), waveform processing, fault zone analysis, inversion methods</li>
   <li><strong>Laboratory:</strong> SHIVA apparatus operation, HPHT simulations, micro-Raman spectroscopy, SEM preparation and imaging</li>
 </ul>
+</div>
 
-<h2>Languages</h2>
+<h2 onclick="toggleSection(this)">🌍 Languages</h2>
+<div class="section-content">
 <ul>
   <li><strong>Persian:</strong> Native</li>
   <li><strong>English:</strong> C1 (Listening/Reading), B2 (Speaking/Writing)</li>
   <li><strong>Italian:</strong> Basic</li>
 </ul>
+</div>
 
-<h2>Soft Skills</h2>
+<h2 onclick="toggleSection(this)">💡 Soft Skills</h2>
+<div class="section-content">
 <ul>
   <li>Analytical and critical thinking</li>
   <li>Strategic problem solving</li>
@@ -126,13 +169,26 @@ Seismology, fault mechanics, seismic attenuation (Q), microseismicity, high-pres
   <li>Team leadership and mentoring</li>
   <li>Adaptable, detail-oriented, and proactive</li>
 </ul>
+</div>
 
-<h2>References</h2>
+<h2 onclick="toggleSection(this)">📢 References</h2>
+<div class="section-content">
 <ul>
   <li><strong>Prof. Giulio Di Toro</strong> – giulio.ditoro@unipd.it</li>
   <li><strong>Dr. Elena Spagnuolo</strong> – elena.spagnuolo@ingv.it</li>
   <li><strong>Dr. Stefano Aretusini</strong> – stefano.aretusini@ingv.it</li>
 </ul>
+</div>
+
+<script>
+function toggleSection(header) {
+  const content = header.nextElementSibling;
+  content.classList.toggle("visible");
+}
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
