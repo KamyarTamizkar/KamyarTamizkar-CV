@@ -50,20 +50,30 @@
     .visible {
       display: block;
     }
-    .toggle-btn {
+    .button-bar {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
       margin: 20px 0;
+    }
+    .toggle-btn, .download-btn {
       cursor: pointer;
       padding: 8px 12px;
       background: var(--accent);
       border: none;
       color: white;
       border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-<button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+<div class="button-bar">
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <a href="#" class="download-btn" onclick="downloadPage()">Download CV</a>
+</div>
 
 <h1>📈 Kamyar Tamizkar</h1>
 <p><strong>Geophysicist | Seismic Interpretation | Fault Mechanics</strong></p>
@@ -187,6 +197,13 @@ function toggleSection(header) {
 }
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
+}
+function downloadPage() {
+  const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Kamyar_Tamizkar_CV.html';
+  a.click();
 }
 </script>
 
