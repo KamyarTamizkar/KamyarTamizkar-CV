@@ -7,20 +7,26 @@
     :root {
       --bg: #f9f9f9;
       --text: #333;
-      --accent: #005a9c;
+      --accent: #007acc;
     }
     body.dark {
-      --bg: #111;
-      --text: #eee;
-      --accent: #33bbee;
+      --bg: #121212;
+      --text: #e0e0e0;
+      --accent: #66ccff;
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      max-width: 850px;
+      max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
       background-color: var(--bg);
       color: var(--text);
+      line-height: 1.6;
+    }
+    h1, h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-top: 30px;
     }
     h1 {
       font-size: 32px;
@@ -28,33 +34,37 @@
     }
     h2 {
       font-size: 20px;
-      margin-top: 30px;
       color: var(--accent);
       cursor: pointer;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
     }
-    ul, p {
+    p, li {
       font-size: 16px;
-      line-height: 1.6;
     }
-    ul { margin-left: 20px; }
-    .section-content { display: none; margin-top: 10px; }
-    .visible { display: block; }
+    ul {
+      margin-left: 20px;
+    }
+    .section-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .visible {
+      display: block;
+    }
     .button-bar {
       display: flex;
+      justify-content: flex-start;
       gap: 10px;
       margin: 20px 0;
     }
     .toggle-btn, .download-btn {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 14px;
       cursor: pointer;
+      padding: 8px 12px;
+      background: var(--accent);
+      border: none;
+      color: white;
+      border-radius: 6px;
       text-decoration: none;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -62,61 +72,91 @@
 
 <div class="button-bar">
   <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-  <a href="#" class="download-btn" onclick="downloadPage()">Download CV</a>
+  <a href="Kamyar_Tamizkar_CV.pdf" class="download-btn" download>Download PDF</a>
 </div>
 
-<h1>Kamyar Tamizkar</h1>
-<p><strong>Geophysicist | Experimental Seismology | Fault Mechanics Researcher</strong></p>
+<h1>📈 Kamyar Tamizkar</h1>
+<p><strong>Geophysicist | Fault Mechanics | Seismic Interpretation | HPHT Experiments</strong></p>
 <p>📍 Padova, Italy | 📧 kamyartamizkar@gmail.com | 📞 +39 371 536 3288</p>
-<p><a href="https://www.linkedin.com/in/kamyar-tamizkar-654b8620a" target="_blank">LinkedIn</a></p>
+<p><a href="https://www.linkedin.com/in/kamyar-tamizkar-654b8620a" target="_blank">LinkedIn Profile</a></p>
 
-<h2 onclick="toggleSection(this)">About</h2>
+<h2 onclick="toggleSection(this)">🔍 About Me</h2>
 <div class="section-content visible">
-<p>Research-driven geophysicist with a focus on experimental fault mechanics and the physics of earthquakes in carbonate systems. Experienced in conducting high-velocity lab simulations using SHIVA, analyzing seismic signals, and interpreting geophysical datasets. Passionate about applying cutting-edge research to seismic hazard mitigation and subsurface CO₂ storage monitoring.</p>
+<p>
+Research-driven geophysicist with experience in experimental fault mechanics, seismic interpretation, and subsurface geomechanics. Skilled in high-velocity laboratory simulations using SHIVA and analytical techniques like SEM and micro-Raman spectroscopy. My research focuses on understanding fault behavior in carbonate rocks, particularly under conditions relevant to seismic slip and CO₂ storage safety.
+</p>
 </div>
 
-<h2 onclick="toggleSection(this)">Education</h2>
+<h2 onclick="toggleSection(this)">📊 Research Interests</h2>
+<div class="section-content">
+<p>
+Fault dynamics, high-pressure rock deformation, seismic slip processes, waveform analysis, attenuation (Q), full waveform inversion, induced seismicity, geomechanics, and fluid-rock interactions.
+</p>
+</div>
+
+<h2 onclick="toggleSection(this)">🎓 Education</h2>
 <div class="section-content">
 <ul>
-  <li><strong>MSc in Geophysics for Natural Risk and Resources</strong> – University of Padua (2022–2024)<br>Thesis on carbonate fault slip under CO₂ and Ar, supervised by Prof. Giulio Di Toro</li>
-  <li><strong>Erasmus+ Mobility</strong> – University of Bergen, Norway (2023)<br>Specialization in seismic inversion and microseismic analysis</li>
-  <li><strong>MSc in Petroleum Engineering (Incomplete)</strong> – University of Semnan, Iran (2020–2021)</li>
-  <li><strong>BSc in Petroleum Engineering</strong> – Islamic Azad University, Tehran (2009–2016)</li>
+  <li><strong>MSc in Geophysics for Natural Risk and Resources</strong> – University of Padua, Italy (2022–2024)<br>
+    Final Grade: 110/110 cum laude<br>
+    Thesis: Experimental fault weakening in carbonates under CO₂ and Argon gas using SHIVA rotary shear (Prof. Giulio Di Toro)</li>
+  <li><strong>Erasmus+ Exchange</strong> – University of Bergen, Norway (2023)<br>
+    Specialized in seismic waveform analysis and applied seismology</li>
+  <li><strong>MSc Petroleum Engineering – Exploration Geophysics (Incomplete)</strong> – University of Semnan, Iran (2020–2021)<br>
+    GPA (Completed Courses): 19.07/20</li>
+  <li><strong>BSc in Petroleum Engineering</strong> – Islamic Azad University, Tehran (2009–2016)<br>
+    GPA: 14.19/20</li>
 </ul>
 </div>
 
-<h2 onclick="toggleSection(this)">Experience</h2>
+<h2 onclick="toggleSection(this)">💼 Work & Research Experience</h2>
 <div class="section-content">
 <ul>
-  <li><strong>Intern – INGV Rome (2024)</strong><br>Executed HPHT deformation experiments on calcite under seismic slip rates</li>
-  <li><strong>Geophysicist – PGPZ Tehran (2020–2022)</strong><br>Seismic interpretation for oil and gas prospects; 2D/3D data processing</li>
-  <li><strong>Team Lead – Sazehkar (2016–2020)</strong><br>Led structural retrofit projects using FRP materials; coordinated QA protocols</li>
+  <li><strong>HPHT Lab Assistant (Internship)</strong> – INGV, Rome (May 2024)<br>
+    Assisted in simulating seismic slip using high-velocity deformation experiments under controlled CO₂ environments.</li>
+  <li><strong>Petroleum Geophysicist</strong> – PGPZ, Tehran (2020–2022)<br>
+    Performed 2D/3D seismic interpretation and contributed to geophysical reservoir characterization.</li>
+  <li><strong>Exploration Geologist Assistant</strong> – PGPZ, Tehran (2017–2018)<br>
+    Integrated geological and geophysical datasets to identify exploration targets.</li>
+  <li><strong>Team Supervisor</strong> – Sazehkar, Karaj (2016–2020)<br>
+    Led civil engineering projects involving FRP-based structural retrofitting.</li>
 </ul>
 </div>
 
-<h2 onclick="toggleSection(this)">Skills</h2>
+<h2 onclick="toggleSection(this)">🛠️ Technical Skills</h2>
 <div class="section-content">
 <ul>
-  <li><strong>Geophysics:</strong> Seismic signal analysis, waveform inversion, fault modeling</li>
-  <li><strong>Software:</strong> ObsPy, MATLAB, Petrel, QGIS, Geolog</li>
-  <li><strong>Lab:</strong> SHIVA system, micro-Raman, SEM prep and imaging</li>
+  <li><strong>Software:</strong> ObsPy, Petrel, Geolog, QGIS, AutoCAD, MATLAB</li>
+  <li><strong>Programming:</strong> Python (NumPy, Pandas, ObsPy), MATLAB (signal processing)</li>
+  <li><strong>Geophysics:</strong> Seismic inversion, fault zone modeling, waveform analysis, geomechanical interpretation</li>
+  <li><strong>Lab:</strong> SHIVA operation, SEM, micro-Raman spectroscopy, HPHT testing protocols</li>
 </ul>
 </div>
 
-<h2 onclick="toggleSection(this)">Languages</h2>
+<h2 onclick="toggleSection(this)">🌍 Languages</h2>
 <div class="section-content">
 <ul>
-  <li>Persian: Native</li>
-  <li>English: C1 (Reading/Listening), B2 (Writing/Speaking)</li>
-  <li>Italian: Beginner</li>
+  <li><strong>Persian:</strong> Native</li>
+  <li><strong>English:</strong> C1 (Listening/Reading), B2 (Speaking/Writing)</li>
+  <li><strong>Italian:</strong> Basic</li>
 </ul>
 </div>
 
-<h2 onclick="toggleSection(this)">References</h2>
+<h2 onclick="toggleSection(this)">💡 Soft Skills</h2>
+<div class="section-content">
+<ul>
+  <li>Analytical thinking and critical evaluation</li>
+  <li>Independent research planning and execution</li>
+  <li>Interdisciplinary teamwork and mentoring</li>
+</ul>
+</div>
+
+<h2 onclick="toggleSection(this)">📢 References</h2>
 <div class="section-content">
 <ul>
   <li><strong>Prof. Giulio Di Toro</strong> – giulio.ditoro@unipd.it</li>
   <li><strong>Dr. Elena Spagnuolo</strong> – elena.spagnuolo@ingv.it</li>
+  <li><strong>Dr. Stefano Aretusini</strong> – stefano.aretusini@ingv.it</li>
 </ul>
 </div>
 
